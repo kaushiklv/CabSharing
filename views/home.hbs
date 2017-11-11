@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <!-- Bootstrap -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" >
+   </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="home.html"><img style="margin-left: -10px ; margin-top: -14px" height="50px," width="50px" src="logo.jpg"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/home">HOME<span class="sr-only"></span></a></li>
+                    <li><a href="/register">REGISTER<span class="sr-only"></span></a></li>
+                    <li><a href="/search">SEARCH<span class="sr-only"></span></a></li>
+                    <li><a href="/calendar">VIEW ALL<span class="sr-only"></span></a></li>
+                    <li><a href="/history">HISTORY<span class="sr-only"></span></a></li>
+                    <li><a href="/allRequests">REQUESTS<span class="sr-only"></span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">ABOUT US<span class="sr-only"></span></a></li>
+                    <li><a href="/logout">LOG OUT<span class="sr-only"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid" style="padding-top: 90px;" >
+        <div class="row"  >
+            <div class="col-md-4">
+                <div class="well" id="w1" style="background-color: #ffffff2e">
+                    <form id="w1-view-form" action="/" method="post" role="form" style="display: block;">
+                        <div class="form-group">
+                            <div class="row" >
+                                <div class="col-md-4">
+                                    <label for="w1_username">Username:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="username" id="w1_username" tabindex="1" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row" >
+                                <div class="col-md-4">
+                                    <label for="w1_source">Source:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w1_source" tabindex="1" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w1_dest">Destination:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w1_dest" tabindex="2" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w1_dept">Departure:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="time" name="dept_time" id="w1_dept" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w1_dept">Date:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="date" name="date" id="w1_date" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w1_seats">Partners Needed:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w1_seats" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <input type="submit" name="view-submit" id="w1-view-submit" class="form-control btn btn-register pull-right" value="Request">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="well" id="w2" style="background-color: #ffffff2e">
+                    <form id="w2-view-form" action="/" method="post" role="form" style="display: block;">
+                        <div class="form-group">
+                            <div class="row" >
+                                <div class="col-md-4">
+                                    <label for="w2_username">Username:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="Username" id="w2_username" tabindex="1" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row" >
+                                <div class="col-md-4">
+                                    <label for="w2_source">Source:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w2_source" tabindex="1" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w2_dest">Destination:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w2_dest" tabindex="2" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w2_dept">Departure:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="time" name="dept_time" id="w2_dept" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w1_dept">Date:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="date" name="date" id="w2_date" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w2_seats">Partners Needed:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w2_seats" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <input type="submit" name="view-submit" id="w2-view-submit" class="form-control btn btn-register pull-right" value="Request">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="well" id="w3" style="background-color: #ffffff2e">
+                    <form id="w3-view-form" action="/" method="post" role="form" style="display: block;">
+                        <div class="form-group">
+                            <div class="row" >
+                                <div class="col-md-4">
+                                    <label for="w3_username">Username:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="username" id="w3_username" tabindex="1" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row" >
+                                <div class="col-md-4">
+                                    <label for="w3_source">Source:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w3_source" tabindex="1" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w3_dest">Destination:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w3_dest" tabindex="2" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w3_dept">Departure:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="time" name="dept_time" id="w3_dept" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w1_dept">Date:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="date" name="date" id="w3_date" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-4">
+                                    <label for="w3_seats">Partners Needed:</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="source" id="w3_seats" tabindex="4" class="form-control" value="" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-4"></div>
+                                <div class="col-sm-4">
+                                    <input type="submit" name="view-submit" id="w3-view-submit" class="form-control btn btn-register pull-right" value="Request">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="data" style="display: none;">{{docs}}</div>
+    <script type="text/javascript">
+        var str = $("#data").text();
+        var jsonData = JSON.parse(str);
+        $(function() {
+            $('#w1_username').val(jsonData[0].username);
+            $('#w1_source').val(jsonData[0].source);
+            $('#w1_dest').val(jsonData[0].destination);
+            $('#w1_dept').val(jsonData[0].deptTime);
+            $('#w1_seats').val(jsonData[0].seats);
+            $('#w1_date').val(jsonData[0].date);
+
+            $('#w2_username').val(jsonData[1].username);
+            $('#w2_source').val(jsonData[1].source);
+            $('#w2_dest').val(jsonData[1].destination);
+            $('#w2_dept').val(jsonData[1].deptTime);
+            $('#w2_seats').val(jsonData[1].seats);
+            $('#w2_date').val(jsonData[1].date);
+
+            $('#w3_username').val(jsonData[2].username);
+            $('#w3_source').val(jsonData[2].source);
+            $('#w3_dest').val(jsonData[2].destination);
+            $('#w3_dept').val(jsonData[2].deptTime);
+            $('#w3_seats').val(jsonData[2].seats);
+            $('#w3_date').val(jsonData[2].date);
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Test event",
+        "id": "821",
+        "start": "2017-11-07 06:00:00",
+        "allDay": false
+    },
+    {
+        "title": "Test event 2",
+        "id": "822",
+        "start": "2017-12-10 16:00:00",
+        "allDay": false
+    },
+    {
+        "title": "Test event 3",
+        "id": "823",
+        "start": "2017-12-15 16:00:00",
+        "allDay": false
+    }
+]

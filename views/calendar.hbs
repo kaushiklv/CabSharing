@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <link rel='stylesheet' href='https://fullcalendar.io/js/fullcalendar-3.1.0/fullcalendar.min.css' />
+    <link rel='stylesheet' media="print" href='https://fullcalendar.io/js/fullcalendar-3.1.0/fullcalendar.print.css' />
+    <link rel="stylesheet" type="text/css" href="calendar.css">
+</head>
+
+<body style="margin-left: 50px; margin-right: 50px">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="home.html"><img style="margin-left: -10px ; margin-top: -14px" height="50px," width="50px" src="logo.jpg"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/home">HOME<span class="sr-only"></span></a></li>
+                    <li><a href="/register">REGISTER<span class="sr-only"></span></a></li>
+                    <li><a href="/search">SEARCH<span class="sr-only"></span></a></li>
+                    <li><a href="/calendar">VIEW ALL<span class="sr-only"></span></a></li>
+                    <li><a href="/history">HISTORY<span class="sr-only"></span></a></li>
+                    <li><a href="/allRequests">REQUESTS<span class="sr-only"></span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">ABOUT US<span class="sr-only"></span></a></li>
+                    <li><a href="/logout">LOG OUT<span class="sr-only"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br> 
+    <br> 
+    <br>   
+    <div id='eventData' style="display: none;">{{docs}}</div>
+    <div id='calendar' style="background-color: #ffffff2e;"></div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/lib/moment.min.js'></script>
+            <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/lib/jquery.min.js'></script>
+            <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/lib/jquery-ui.min.js'></script>
+            <script src='https://fullcalendar.io/js/fullcalendar-3.1.0/fullcalendar.min.js'></script>
+            
+            <script type="text/javascript">
+            $(function(){
+                function showCalendar() {
+                    $('#calendar').fullCalendar({
+                        selectable: true,
+                        selectHelper: true,
+                        aspectRatio: 2,
+                        height: 600,
+                        defaultView: 'month',
+                        header: {
+                            left: 'prevYear,prev,next,nextYear today',
+                            center: 'title',
+                            right: 'month,agendaWeek,agendaDay,listMonth'
+                        },
+                        eventClick: function(calEvent, jsEvent, view) {
+                                alert(calEvent.title);
+                            }
+                    });
+                }
+
+                var str = $("#eventData").text();
+                var jsonData = JSON.parse(str);
+                var newEvents = [];
+                for(i = 0; i < jsonData.length; i++) {
+                    var obj = jsonData[i];
+                    newEvents.push({
+                        title : obj.source + " to " +obj.destination,
+                        id : obj._id,
+                        start : obj.date + " " + obj.deptTime,
+                        allDay : false
+                    });
+                }
+
+                console.log(jsonData);
+
+                showCalendar();
+
+                $('#calendar').fullCalendar('addEventSource', newEvents);
+            });
+            </script>
+            
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Results</title>
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="results.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body onload="fillDataJson()">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/home"><img style="margin-left: -10px ; margin-top: -14px" height="50px," width="50px" src="logo.jpg"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/home">HOME<span class="sr-only"></span></a></li>
+                    <li><a href="/register">REGISTER<span class="sr-only"></span></a></li>
+                    <li><a href="/search">SEARCH<span class="sr-only"></span></a></li>
+                    <li><a href="/calendar">VIEW ALL<span class="sr-only"></span></a></li>
+                    <li><a href="/history">HISTORY<span class="sr-only"></span></a></li>
+                    <li><a href="/allRequests">REQUESTS<span class="sr-only"></span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">ABOUT US<span class="sr-only"></span></a></li>
+                    <li><a href="/logout">LOG OUT<span class="sr-only"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container-fluid" style ="padding: 90px;">
+        <table class="table" cellspacing="10" id="tab" style="background-color: #00000000">
+        </table>
+    </div>
+    <div id="data" style="display: none;">
+    {{docs}}
+    </div>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script type="text/javascript">
+        function fillDataJson()
+        {
+            var str=$("#data").text();
+            var resultarray = JSON.parse(str);
+            for(var i = 0 ;i < resultarray.length; i++)
+            {
+                var username = resultarray[i].username;
+                var source = resultarray[i].source;
+                var destination = resultarray[i].destination;
+                var deptTime = resultarray[i].deptTime;
+                var date=resultarray[i].date;
+                var seats = resultarray[i].seats;
+                var phone = resultarray[i].phone;
+                var prefs = resultarray[i].preferences;
+                var id = resultarray[i]._id;
+                
+                // console.log(prefs);
+
+                if(seats >= 1) {
+
+                    var tab_data= "<tr><td style=\"border-top: 0px\">";
+                    tab_data+="<div class=\"well\" id=\"w"+(i)+"\" style=\"background-color:#f5f5f500; border-color:#ffffff2e\">";
+                    tab_data+="<form id=\"w"+(i)+"-view-form\" action=\"/requests\" method=\"get\" role=\"form\" style=\"display: block;\"><div class=\"row\"><div class=\"col-md-6\">";
+
+                    tab_data+="<div class=\"row\">";
+                    tab_data+="<div class=\"col-md-4\">";
+                    tab_data+="<label for=\"w"+(i)+"_username\" style=\"color:#000000ed;\">Username:</label></div>";
+                    tab_data+="<div class=\"col-md-8\"><input type=\"text\" name=\"username\" id=\"w"+(i)+"_username\" tabindex=\""+i+"\" class=\"form-control\" value="+username+" readonly></div></div>";
+
+                    tab_data+="<div class=\"row\">";
+                    tab_data+="<div class=\"col-md-4\">";
+                    tab_data+="<label for=\"w"+(i)+"_source\" style=\"color:#000000ed;\">Source:</label></div>";
+                    tab_data+="<div class=\"col-md-8\"><input type=\"text\" name=\"source\" id=\"w"+(i)+"_source\" tabindex=\""+i+"\" class=\"form-control\" value="+source+" readonly></div></div>";
+
+                    tab_data+="<div class=\"row\">";
+                    tab_data+="<div class=\"col-md-4\">";
+                    tab_data+="<label for=\"w"+(i)+"_dest\" style=\"color:#000000ed;\">Destination:</label></div>";
+                    tab_data+="<div class=\"col-md-8\"><input type=\"text\" name=\"dest\" id=\"w"+(i)+"_dest\" tabindex=\""+i+"\" class=\"form-control\" value="+destination+" readonly></div></div></div>";
+
+                    tab_data+="<div class=\"col-md-6\"><div class=\"row\">";
+                    tab_data+="<div class=\"col-md-4\">";
+                    tab_data+="<label for=\"w"+(i)+"_dept\" style=\"color:#000000ed;\">Departure:</label></div>";
+                    tab_data+="<div class=\"col-md-8\"><input type=\"time\" name=\"dept\" id=\"w"+(i)+"_dept\" tabindex=\""+i+"\" class=\"form-control\" value="+deptTime+" readonly></div></div>";
+
+                    tab_data+="<div class=\"row\">";
+                    tab_data+="<div class=\"col-md-4\">";
+                    tab_data+="<label for=\"w"+(i)+"_date\" style=\"color:#000000ed;\">Date:</label></div>";
+                    tab_data+="<div class=\"col-md-8\"><input type=\"date\" name=\"date\" id=\"w"+(i)+"_date\" tabindex=\""+i+"\" class=\"form-control\" value="+date+" readonly></div></div>";
+
+                    tab_data+="<div class=\"row\">";
+                    tab_data+="<div class=\"col-md-4\">";
+                    tab_data+="<label for=\"w"+(i)+"_seats\" style=\"color:#000000ed;\">Seats:</label></div>";
+                    tab_data+="<div class=\"col-md-8\"><input type=\"text\" name=\"seats\" id=\"w"+(i)+"_seats\" tabindex=\""+i+"\" class=\"form-control\" value="+seats+" readonly></div></div></div></div>";
+
+                    tab_data+="<div class=\"row\">";
+                    tab_data+="<div class=\"col-md-2\">";
+                    tab_data+="<label for=\"w"+(i)+"_prefs\" style=\"color:#000000ed;\">Preference:</label></div>";
+                    tab_data+="<div class=\"col-md-10\"><input type=\"textarea\" name=\"prefs\" id=\"w"+(i)+"_prefs\" tabindex=\""+i+"\" class=\"form-control\" value=\""+prefs+"\" readonly></div></div>";
+
+                    tab_data+="<div class=\"row\">";   
+                    tab_data+="<div style=\"display:none;\"><input type=\"text\" name=\"phone\" id=\"w"+(i)+"phone\" tabindex=\""+i+"\" class=\"form-control\" value="+phone+" readonly></div><br>";               
+                    tab_data+="<div style=\"display:none;\"><input type=\"text\" name=\"_id\" id=\"w"+id+"_id\" tabindex=\""+i+"\" class=\"form-control\" value="+id+" readonly></div><br>";
+                    tab_data+="<div class=\"col-md-4\"></div>";
+                    tab_data+="<div class=\"col-md-4\">";
+                    tab_data+="<input type=\"submit\" name=\"result"+(i)+"-submit\" id=\"w"+(i)+"-view-submit\" class=\"form-control btn btn-register pull-right\" value=\"Request\"></div></div>";
+
+
+                    tab_data+="</form></div></td></tr>";
+                    $("#tab").append(tab_data);
+                }
+                else
+                    continue;
+            }
+        }
+    </script>
+</body>

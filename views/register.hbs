@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Register</title>
+        <!-- Bootstrap CSS -->
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="register.css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    </head>
+
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="home.html"><img style="margin-left: -10px ; margin-top: -14px" height="50px," width="50px" src="logo.jpg"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="/home">HOME<span class="sr-only"></span></a></li>
+                    <li><a href="/register">REGISTER<span class="sr-only"></span></a></li>
+                    <li><a href="/search">SEARCH<span class="sr-only"></span></a></li>
+                    <li><a href="/calendar">VIEW ALL<span class="sr-only"></span></a></li>
+                    <li><a href="/history">HISTORY<span class="sr-only"></span></a></li>
+                    <li><a href="/allRequests">REQUESTS<span class="sr-only"></span></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">ABOUT US<span class="sr-only"></span></a></li>
+                    <li><a href="/logout">LOG OUT<span class="sr-only"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <div class="container-fluid" style="padding-top: 90px;">
+            <div class="row">
+                <div class="col-md-5">
+                <h3 style="color:white; font-family:cursive; text-shadow: 2px 2px #000000">Why are you still thinking {{name}}?</h3>
+                <h3 style="color:white; font-family:cursive; text-shadow: 2px 2px #000000">Enter your details. Don't wait for someone else to book your partner.</h3>
+            </div>
+                <div class="col-md-7">
+                    <div class="panel panel-register" style="background-color: #ffffff2e">
+                        <div class="panel-heading" style="background-color: #ffffff2e">
+                            <div class="row">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <form id="search-form-link" action="/newRequest" method="post" role="form" style="display: block;">
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label for="source">Source:</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" name="source" id="source" tabindex="1" class="form-control" placeholder="Ex: IIIT H" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label for="destination">Destination:</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" name="destination" id="destination" tabindex="2" class="form-control" placeholder="Ex: Inorbit Mall" value="">
+                                                        </div>
+                                                    </div>                                                
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label for="dept_time">Deaparture Time:</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="time" name="dept_time" id="dept_time" tabindex="3" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label for="seats">Partners Needed:</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <select name="seats" id="seats" tabindex=4 class="form-control">
+                                                              <option value="1">1</option>
+                                                              <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label for="telphone">Contact Details:</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" name="telephone" placeholder="Ex:9876543210" id="telephone" tabindex="5" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label for="date">Date:</label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="date" name="date" id="date" tabindex="6" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <label for="text">Preferences: </label>
+                                                        </div>
+                                                        <div class="col-md-9">
+                                                            <input type="text" name="preferences" id="preferences" placeholder="Ex: Silence is golden, Not flexible with time" tabindex="7" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-sm-6 col-sm-offset-3">
+                                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div><p style="color: #08EE19; text-align: center;">{{message}}</p></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- jQuery -->
+            <script src="//code.jquery.com/jquery.js"></script>
+            <!-- Bootstrap JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+            <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+            <script src="Hello World"></script>
+    </body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "cabsharing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "datejs": "^1.0.0-rc3",
+    "express": "^4.16.2",
+    "fullcalendar": "^3.6.2",
+    "handlebar": "^1.0.0",
+    "handlebars": "^4.0.11",
+    "hbs": "^4.0.1",
+    "http": "0.0.0",
+    "mocha": "^4.0.1",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.0",
+    "nodejs": "0.0.0",
+    "nodemon": "^1.12.1",
+    "url": "^0.11.0"
+  }
+}
